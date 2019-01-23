@@ -12,8 +12,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
     
-    
-    <p></p>
+    <?php foreach ($destacados->result() as $producto):?>
+    <p><?= $producto->nombre ?></p>
+    <img src="<?= $producto->imagen ?>" height="100" width="100">
+    <p><?= $producto->precio_venta ?>€</p>
+    <p><?= $producto->descripcion ?></p>
+    <?php endforeach;?>
     
 </body>
 </html>

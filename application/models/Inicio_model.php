@@ -8,11 +8,10 @@ class Inicio_model extends CI_Model {
     }
     
     function get_producto_destacado(){
-        $this->db->select("nombre,imagen");
-        $this->db->from("producto");
+        
         $this->db->where("destacado",true);
         
-        $query=$this->db->get();
+        $query=$this->db->get('producto');   
         return $query;
     }
     
