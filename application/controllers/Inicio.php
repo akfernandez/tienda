@@ -6,11 +6,21 @@ class Inicio extends CI_Controller {
 
     public function index() {
         $this->load->model('Inicio_model');
-        $result = $this->Inicio_model->get_producto_destacado();
+      
 
         $this->load->view('inicio_plantilla', array(
-            'destacados' => $result
-            
+            'destacados' => $this->Inicio_model->get_producto_destacado(),
+            'categorias' => $this->Inicio_model->get_categorias()
+        ));
+    }
+    
+     public function tienda() {
+        $this->load->model('Inicio_model');
+        
+
+        $this->load->view('tienda', array(
+            'destacados' => $this->Inicio_model->get_producto_destacado(),
+            'categorias' => $this->Inicio_model->get_categorias()
         ));
     }
 

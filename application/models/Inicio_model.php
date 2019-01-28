@@ -15,5 +15,13 @@ class Inicio_model extends CI_Model {
         return $query;
     }
     
+    function get_categorias(){
+        
+        
+        
+        $query=$this->db->get('categoria');   
+        return $query;
+    }
+    
 }
 
